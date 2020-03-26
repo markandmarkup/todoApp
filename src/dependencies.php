@@ -27,8 +27,8 @@ return function (App $app) {
         return $db;
     };
 
-    $container['ToDosModel'] = new \Todos\Factories\ToDosModelFactory();
+    $container['ToDosModel'] = new \ToDos\Factories\ToDosModelFactory();
 
-    $container['SeeAllToDosController'] = new \Todos\Factories\SeeAllToDosControllerFactory();
+    $container['SeeAllToDosController'] = new \ToDos\Factories\SeeAllToDosControllerFactory();
 
 };

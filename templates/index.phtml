@@ -13,11 +13,29 @@
     <main>
         <section id="incomplete">
             <h2>My to-dos:</h2>
-
+            <div class="toDoContainer">
+                <?php foreach($ToDos as $ToDo) :
+                    if ($ToDo['completed'] === '0') : ?>
+                    <div class="toDo">
+                        <?= $ToDo['title'] ?>
+                        <a href="/<?= $ToDo['id'] ?>/complete">Done!</a>
+                    </div>
+                    <? endif; ?>
+                <? endforeach; ?>
+            </div>
         </section>
         <section id="complete">
             <h2>Completed:</h2>
-
+            <div class="toDoContainer">
+                <?php foreach($ToDos as $ToDo) :
+                    if ($ToDo['completed'] === '1') : ?>
+                        <div class="toDo">
+                            <?= $ToDo['title'] ?>
+                            <span class="comp-date"><?= $ToDo['comp_date'] ?></span>
+                        </div>
+                    <? endif; ?>
+                <? endforeach; ?>
+            </div>
         </section>
     </main>
     </body>

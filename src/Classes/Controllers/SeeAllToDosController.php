@@ -1,6 +1,6 @@
 <?php
 
-namespace Todos\Controllers;
+namespace ToDos\Controllers;
 
 use Slim\Http\Request;
 use Slim\Http\Response;
@@ -20,7 +20,7 @@ class SeeAllToDosController
 
     public function __invoke(Request $request, Response $response, array $args)
     {
-        $args['Todos'] = $this->toDosModel->retrieveAllToDos();
+        $args['ToDos'] = $this->toDosModel->retrieveAllToDos();
         return $this->renderer->render($response, 'index.phtml', $args);
     }
 }

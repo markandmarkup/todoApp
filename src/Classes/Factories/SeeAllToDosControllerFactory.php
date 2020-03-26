@@ -1,9 +1,9 @@
 <?php
 
-namespace Todos\Factories;
+namespace ToDos\Factories;
 
 use Psr\Container\ContainerInterface;
-use Todos\Controllers\SeeAllToDosController;
+use ToDos\Controllers\SeeAllToDosController;
 
 class SeeAllToDosControllerFactory
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Todos\Factories;
+namespace ToDos\Factories;
 
 use Psr\Container\ContainerInterface;
 use ToDos\Models\ToDosModel;
