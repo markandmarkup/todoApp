@@ -4,6 +4,7 @@
         <meta charset="utf-8"/>
         <title>Fondoo || The Cheesy Todo App</title>
         <link rel="stylesheet" type="text/css" href="./css/style.css">
+        <script src="./js/index.js" defer></script>
     </head>
     <body>
     <header>
@@ -21,6 +22,7 @@
                 <?php foreach($ToDos as $ToDo) :
                     if ($ToDo['completed'] === '0') : ?>
                     <div class="toDo">
+                        <button type="button" class="deleteToDo" data-id="<?= $ToDo['id'] ?>">&#10008;</button>
                         <?= $ToDo['title'] ?>
                         <a href="/<?= $ToDo['id'] ?>/complete">Done!</a>
                     </div>
@@ -34,6 +36,7 @@
                 <?php foreach($ToDos as $ToDo) :
                     if ($ToDo['completed'] === '1') : ?>
                         <div class="toDo">
+                            <button type="button" class="deleteToDo" data-id="<?= $ToDo['id'] ?>">&#10008;</button>
                             <?= $ToDo['title'] ?>
                             <span class="comp-date"><?= $ToDo['comp_date'] ?></span>
                         </div>

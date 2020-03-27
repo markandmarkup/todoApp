@@ -18,11 +18,17 @@ class ToDosModel
         return $query->fetchAll();
     }
 
-    public function addToDo(array $formInput)
+    public function addToDo(string $title)
     {
-        $title = $formInput['toDoTitle'];
         $query = $this->dbConnection->prepare("INSERT INTO `todos` (`title`) VALUES (:title);");
         $query->bindParam(':title', $title);
-        $query->execute();
+        return $query->execute();
+    }
+
+    public function deleteToDo(int $toDoId)
+    {
+        $query = $this->dbConnection->prepare("UPDATE `todos` SET `deleted`=1 WHERE `id`=:id");
+        $query->bindParam(':id', $toDoId);
+        return $query->execute();
     }
 }

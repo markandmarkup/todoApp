@@ -6,7 +6,7 @@ use Slim\Http\Request;
 use Slim\Http\Response;
 use ToDos\Models\ToDosModel;
 
-class AddToDoController
+class DeleteToDoController
 {
     private $toDosModel;
 
@@ -17,9 +17,12 @@ class AddToDoController
 
     public function __invoke(Request $request, Response $response, array $args)
     {
-        $formInput = $request->getParsedBody();
-        $title = $formInput['toDoTitle'];
-        $this->toDosModel->addToDo($title);
-        return $response->withRedirect('/');
+        $requestData = $request->getParsedBody();
+        $id = $requestData['id'];
+        if($this->toDosModel->deleteToDo($id)){
+            return $response->withStatus(200);
+        } else {
+            return $response->withStatus(500);
+        }
     }
 }

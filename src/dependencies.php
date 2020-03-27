@@ -33,4 +33,6 @@ return function (App $app) {
 
     $container['AddToDoController'] = new \ToDos\Factories\AddToDoControllerFactory();
 
+    $container['DeleteToDoController'] = new \ToDos\Factories\DeleteToDoControllerFactory();
+
 };
