@@ -14,6 +14,10 @@
         <section id="incomplete">
             <h2>My to-dos:</h2>
             <div class="toDoContainer">
+                <form action="/" method="post">
+                    <input type="text" id="toDoTitle" name="toDoTitle" placeholder="New to-do" />
+                    <input type="submit" value="Add" />
+                </form>
                 <?php foreach($ToDos as $ToDo) :
                     if ($ToDo['completed'] === '0') : ?>
                     <div class="toDo">
