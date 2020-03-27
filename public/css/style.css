@@ -1,3 +1,52 @@
 * {
-    color: red;
+    box-sizing: border-box;
+}
+
+body {
+    margin-bottom: 100px;
+}
+
+.center-container {
+    width: 750px;
+    margin: 0 auto;
+}
+
+section {
+    width: 550px;
+}
+
+.toDo {
+    margin: 10px 10px;
+    background-color: cornsilk;
+    padding: 5px;
+}
+
+.deleteToDo {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+
+.toDoContent {
+    width: 400px;
+}
+
+.toDoContent input[type=text], .toDoContent span {
+    display: inline-block;
+    width: 80%;
+}
+
+.toDoContent button, .toDoContent input[type=submit] {
+    display: inline-block;
+    width: 19%;
+}
+
+.toDo > div {
+    display: inline-block;
+}
+
+.completeToDo {
+    height: 25px;
+    width: 55px;
+    border-radius: 12px;
 }

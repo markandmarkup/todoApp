@@ -14,4 +14,6 @@ return function (App $app) {
     $app->delete('/', 'DeleteToDoController');
 
     $app->put('/{id}/complete', 'CompleteToDoController');
+
+    $app->put('/{id}', 'EditToDoController');
 };

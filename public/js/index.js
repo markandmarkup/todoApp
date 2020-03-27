@@ -1,5 +1,6 @@
 const deleteButtons = document.querySelectorAll('.deleteToDo');
 const completeButtons = document.querySelectorAll('.completeToDo');
+const editForms = document.querySelectorAll('.editForm');
 
 deleteButtons.forEach((deleteButton)=>{
     deleteButton.addEventListener('click', (e)=>{
@@ -10,6 +11,15 @@ deleteButtons.forEach((deleteButton)=>{
 completeButtons.forEach((completeButton)=>{
     completeButton.addEventListener('click', (e)=>{
         completeRequest(e.target.dataset.id);
+    });
+});
+
+editForms.forEach((editForm)=>{
+    editForm.addEventListener('submit', (e)=>{
+        e.preventDefault();
+        let editTitleInput = e.target.firstElementChild.value;
+        let id = e.target.firstElementChild.dataset.id;
+        editRequest(id, editTitleInput);
     });
 });
 
@@ -27,7 +37,7 @@ async function deleteRequest(toDoId) {
         } else {
             console.log(response.status);
         }
-    })
+    });
 }
 
 async function completeRequest(toDoId) {
@@ -35,6 +45,26 @@ async function completeRequest(toDoId) {
         method: 'PUT',
         headers: {
             "Content-Type": "text/plain"
+        }
+    }).then((response) => {
+        if (response.status === 200) {
+            window.location.reload(true);
+        } else {
+            console.log(response.status);
+        }
+    })
+}
+
+async function editRequest(toDoId, editTitleInput) {
+    let data = JSON.stringify({
+        "id":toDoId,
+        "editTitleInput":editTitleInput
+    })
+    fetch('/' + toDoId, {
+        method: 'PUT',
+        body: data,
+        headers: {
+            "Content-Type": "application/json"
         }
     }).then((response) => {
         if (response.status === 200) {

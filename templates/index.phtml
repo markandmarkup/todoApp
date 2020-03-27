@@ -8,10 +8,12 @@
     </head>
     <body>
     <header>
-        <h1>Fondoo</h1>
-        <h4>The cheesy to-do app</h4>
+        <div class="center-container">
+            <h1>Fondoo</h1>
+            <h4>The cheesy to-do app</h4>
+        </div>
     </header>
-    <main>
+    <div class="center-container">
         <section id="incomplete">
             <h2>My to-dos:</h2>
             <div class="toDoContainer">
@@ -23,7 +25,16 @@
                     if ($ToDo['completed'] === '0') : ?>
                     <div class="toDo">
                         <button type="button" class="deleteToDo" data-id="<?= $ToDo['id'] ?>">&#10008;</button>
-                        <?= $ToDo['title'] ?>
+                        <div class="toDoContent">
+                            <div>
+                                <span><?= $ToDo['title'] ?></span>
+                                <button type="button" class="toggleEdit">Edit</button>
+                            </div>
+                            <form class="editForm">
+                                <input type="text" name="editTitleInput" class="editTitleInput" value="<?= $ToDo['title'] ?>" data-id="<?= $ToDo['id'] ?>" />
+                                <input type="submit" value="Submit" />
+                            </form>
+                        </div>
                         <button type="button" class="completeToDo" data-id="<?= $ToDo['id'] ?>">Done!</button>
                     </div>
                     <? endif; ?>
@@ -44,6 +55,6 @@
                 <? endforeach; ?>
             </div>
         </section>
-    </main>
+    </div>
     </body>
 </html>

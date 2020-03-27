@@ -37,4 +37,6 @@ return function (App $app) {
 
     $container['CompleteToDoController'] = new \ToDos\Factories\CompleteToDoControllerFactory();
 
+    $container['EditToDoController'] = new \ToDos\Factories\EditToDoControllerFactory();
+
 };

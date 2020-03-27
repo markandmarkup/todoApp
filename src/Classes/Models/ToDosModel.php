@@ -39,4 +39,12 @@ class ToDosModel
         $query->bindParam(':date', $date);
         return $query->execute();
     }
+
+    public function editToDo(int $toDoId, string $title)
+    {
+        $query = $this->dbConnection->prepare("UPDATE `todos` SET `title`=:title WHERE `id`=:id");
+        $query->bindParam(':id', $toDoId);
+        $query->bindParam(':title', $title);
+        return $query->execute();
+    }
 }
