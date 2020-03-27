@@ -31,4 +31,12 @@ class ToDosModel
         $query->bindParam(':id', $toDoId);
         return $query->execute();
     }
+
+    public function completeToDo(int $toDoId, string $date)
+    {
+        $query = $this->dbConnection->prepare("UPDATE `todos` SET `completed`=1, `comp_date`=:date WHERE `id`=:id");
+        $query->bindParam(':id', $toDoId);
+        $query->bindParam(':date', $date);
+        return $query->execute();
+    }
 }

@@ -12,4 +12,6 @@ return function (App $app) {
     $app->post('/', 'AddToDoController');
 
     $app->delete('/', 'DeleteToDoController');
+
+    $app->put('/{id}/complete', 'CompleteToDoController');
 };

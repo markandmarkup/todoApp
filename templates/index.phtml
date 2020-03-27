@@ -24,7 +24,7 @@
                     <div class="toDo">
                         <button type="button" class="deleteToDo" data-id="<?= $ToDo['id'] ?>">&#10008;</button>
                         <?= $ToDo['title'] ?>
-                        <a href="/<?= $ToDo['id'] ?>/complete">Done!</a>
+                        <button type="button" class="completeToDo" data-id="<?= $ToDo['id'] ?>">Done!</button>
                     </div>
                     <? endif; ?>
                 <? endforeach; ?>
