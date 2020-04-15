@@ -1,5 +1,6 @@
 const deleteButtons = document.querySelectorAll('.deleteToDo');
 const completeButtons = document.querySelectorAll('.completeToDo');
+const editButtons = document.querySelectorAll('.toggleEdit');
 const editForms = document.querySelectorAll('.editForm');
 
 deleteButtons.forEach((deleteButton)=>{
@@ -11,6 +12,13 @@ deleteButtons.forEach((deleteButton)=>{
 completeButtons.forEach((completeButton)=>{
     completeButton.addEventListener('click', (e)=>{
         completeRequest(e.target.dataset.id);
+    });
+});
+
+editButtons.forEach((editButton)=>{
+    editButton.addEventListener('click', (e)=>{
+        editButton.parentElement.style = "display: none;";
+        editButton.parentElement.nextElementSibling.style = "display: block;";
     });
 });
 

@@ -3,14 +3,20 @@
     <head>
         <meta charset="utf-8"/>
         <title>Fondoo || The Cheesy Todo App</title>
+        <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="./css/reset.css">
         <link rel="stylesheet" type="text/css" href="./css/style.css">
+        <script src="https://kit.fontawesome.com/3d49cc2df6.js" crossorigin="anonymous"></script>
         <script src="./js/index.js" defer></script>
     </head>
     <body>
     <header>
         <div class="center-container">
-            <h1>Fondoo</h1>
-            <h4>The cheesy to-do app</h4>
+            <img class="logo" src="./images/cheese-icon.png" />
+            <div class="titles">
+                <h1>Fondoo</h1>
+                <h4>The cheesy to-do app</h4>
+            </div>
         </div>
     </header>
     <div class="center-container">
@@ -28,7 +34,7 @@
                         <div class="toDoContent">
                             <div>
                                 <span><?= $ToDo['title'] ?></span>
-                                <button type="button" class="toggleEdit">Edit</button>
+                                <button type="button" class="toggleEdit"><i class="fas fa-pencil-alt"></i></button>
                             </div>
                             <form class="editForm">
                                 <input type="text" name="editTitleInput" class="editTitleInput" value="<?= $ToDo['title'] ?>" data-id="<?= $ToDo['id'] ?>" />
@@ -56,5 +62,9 @@
             </div>
         </section>
     </div>
+    <footer>
+        <a href="https://www.vecteezy.com/free-vector/cheese-texture">Cheese Texture Vectors by Vecteezy</a>||
+        <a href="http://www.kameleon.pics">Cheese Icon by Kameleon</a>
+    </footer>
     </body>
 </html>
