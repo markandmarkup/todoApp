@@ -3,4 +3,5 @@
 !/logs/README.md
 /src/settings.php
 .idea/
-.DS_Store
+**/.DS_Store
+/tests
